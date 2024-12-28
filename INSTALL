@@ -1,0 +1,126 @@
+🛠️ EchoProbe Installation Guide 🛠️
+===========================================
+
+📋 Table of Contents
+-------------------
+1. System Requirements
+2. Dependencies 
+3. Installation Steps
+4. Wireless Adapter Setup
+5. Running EchoProbe
+6. Troubleshooting
+7. Recommended Hardware
+8. Additional Notes
+
+1. 💻 SYSTEM REQUIREMENTS
+--------------------
+• Operating System: Linux (Ubuntu/Kali Linux recommended)
+• Python 3.6 or higher
+• Root privileges
+• Compatible wireless adapter with monitor mode support
+
+2. 📦 DEPENDENCIES
+--------------------
+🔧 Core packages:
+  • python3
+  • python3-pip
+  • aircrack-ng
+  • wireless-tools
+  • net-tools
+
+📚 Python libraries:
+  • scapy
+  • logging
+  • subprocess
+  • threading
+  • datetime
+  • signal
+
+3. ⚡ INSTALLATION STEPS
+--------------------
+
+a) Update System:
+   $ sudo apt-get update
+   $ sudo apt-get upgrade
+
+b) Install Required System Packages:
+   $ sudo apt-get install -y python3
+   $ sudo apt-get install -y python3-pip
+   $ sudo apt-get install -y aircrack-ng
+   $ sudo apt-get install -y wireless-tools
+   $ sudo apt-get install -y net-tools
+
+c) Install Python Dependencies:
+   $ sudo pip3 install scapy
+
+d) Clone EchoProbe Repository:
+   $ git clone https://github.com/yourusername/echoprobe.git
+   $ cd echoprobe
+
+e) Set Execution Permissions:
+   $ chmod +x echoprobe.py
+
+4. 📡 WIRELESS ADAPTER SETUP
+--------------------
+✅ Check if your wireless adapter is detected:
+   $ iwconfig
+
+✅ Ensure your adapter supports monitor mode:
+   $ sudo airmon-ng
+
+5. 🚀 RUNNING ECHOPROBE
+--------------------
+Execute with root privileges:
+$ sudo python3 echoprobe.py
+
+6. 🔍 TROUBLESHOOTING
+--------------------
+❌ If you encounter "No wireless interfaces found":
+  • Ensure wireless adapter is properly connected
+  • Check if adapter supports monitor mode
+  • Try different USB port
+  • Install appropriate drivers for your adapter
+
+❌ If you get permission errors:
+  • Ensure you're running with sudo
+  • Check file permissions
+  • Verify user is in sudoers group
+
+❌ If monitor mode is stuck or wireless not working:
+  • Stop monitor mode:
+    $ sudo airmon-ng stop wlan0mon
+  • Restart NetworkManager:
+    $ sudo service NetworkManager restart
+    or
+    $ sudo systemctl restart NetworkManager
+
+7. 🎯 RECOMMENDED WIRELESS ADAPTERS
+--------------------
+The following adapters are known to work well with EchoProbe:
+🔵 Alfa AWUS036NHA
+🔵 TP-Link TL-WN722N (v1)
+🔵 Alfa AWUS036ACH
+🔵 Panda PAU09
+
+8. 📝 ADDITIONAL NOTES
+--------------------
+⚠️ Important Considerations:
+  • Some wireless adapters may require additional firmware
+  • NetworkManager might interfere with monitor mode
+  • Keep system and packages updated
+  • Regular testing in monitor mode is recommended
+  • Always stop monitor mode and restart NetworkManager after using the tool
+
+🌐 For Support and Updates:
+  • Visit: https://github.com/yourusername/echoprobe
+  • Report issues: https://github.com/yourusername/echoprobe/issues
+  • Documentation: https://github.com/yourusername/echoprobe/wiki
+
+🔒 Security Notice:
+  • Always use this tool responsibly
+  • Obtain necessary permissions before monitoring networks
+  • Follow local laws and regulations
+
+===========================================
+💫 Thank you for choosing EchoProbe! 💫
+===========================================
